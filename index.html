@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Kevin Cellura | CK8Lab</title>
+        
+        <!-- Meta tags per SEO -->
+        <meta name="description" content="Kevin Cellura - Sviluppatore web che crea siti web per piccole e grandi aziende con budget limitati. Specializzato in siti vetrina e mini e-commerce.">
+        <meta name="keywords" content="Kevin Cellura, CK8Lab, sviluppatore web, siti web, e-commerce, Vercelli">
+        <meta name="author" content="Kevin Cellura">
+        
+        <!-- Meta tags per social media -->
+        <meta property="og:title" content="Kevin Cellura | CK8Lab">
+        <meta property="og:description" content="Sviluppatore web che crea siti web per piccole e grandi aziende con budget limitati.">
+        <meta property="og:image" content="image/io.png">
+        <meta property="og:url" content="https://ck8lab.github.io/kevincellura">
+        <meta property="og:type" content="website">
+        
+        <!-- Favicon - versione corretta -->
+        <link rel="shortcut icon" href="image/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="image/favicon.ico" type="image/x-icon">
+        <link rel="apple-touch-icon" href="image/logo.png">
+        
+        <!-- CSS e font -->
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    </head>
+
+<body>
+    <!-- Canvas per lo sfondo Three.js -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Header/Navbar -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="image/logo.png" alt="CK8Lab Logo" class="logo-img">
+                    <span>Kevin<span>Cellura</span></span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">Chi Sono</a></li>
+                    <li><a href="#services">Servizi</a></li>
+                    <li><a href="#skills">Competenze</a></li>
+                    <li><a href="#contact">Contatti</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Ciao, <br> sono <span>Kevin</span></h1>
+                <h2>CK8Lab</h2>
+                <p>Sono un giovane sviluppatore che crea siti web per piccole e grandi aziende con budget limitati. <br>Ho una forte passione per la programmazione, la tecnologia e l'uso di strumenti digitali avanzati.</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn primary-btn">Contattami</a>
+                    <a href="#services" class="btn secondary-btn">I miei servizi</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-img-container">
+                    <div class="profile-image-frame">
+                        <img src="image/io.png" alt="Kevin Cellura" class="profile-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>Chi Sono</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Mi chiamo Kevin Cellura, sono nato nel 2008 e ho iniziato a programmare all'età di 11 anni. Oggi sviluppo siti web per piccole aziende e grandi progetti con budget contenuti. Studio Informatica all'ITIS di Vercelli e sono appassionato di tecnologia, calcio, alimentazione sana e startup.</p>
+                    <p>La mia missione è rendere accessibile la presenza online a tutte le aziende, indipendentemente dalle loro dimensioni o budget, offrendo soluzioni web moderne ed efficaci.</p>
+                </div>
+                <div class="about-image">
+                    <div class="image-container">
+                        <img src="image/cameretta.png" alt="La mia postazione di lavoro" class="about-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>I Miei Servizi</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Siti Web Vetrina</h3>
+                    <p>Creazione di siti web professionali per piccole aziende locali, con design moderno e responsive.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>Mini E-commerce</h3>
+                    <p>Sviluppo di e-commerce base utilizzando piattaforme come Ecwid e Shopify, senza backend custom.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Supporto Tecnico Continuo</h3>
+                    <p>Assistenza per modifiche, aggiornamenti e risoluzione di problemi su piattaforme come Shopify ed Ecwid senza scadenze.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2>Le Mie Competenze</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="skills-container">
+                <div class="skills-category">
+                    <h3>Competenze Tecniche</h3>
+                    <div class="skill-bars">
+                        <div class="skill">
+                            <div class="skill-name" data-level="90%">HTML</div>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-name" data-level="85%">CSS</div>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-name" data-level="40%">JavaScript</div>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 40%"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-name" data-level="80%">C</div>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-name" data-level="60%">Python</div>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 60%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h3>Competenze Digitali</h3>
+                    <div class="skill-bars">
+                        <div class="skill">
+                            <div class="skill-name" data-level="90%">AI Tools</div>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-name" data-level="85%">Canva</div>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-name" data-level="90%">Suite Google</div>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-name" data-level="85%">Social Media Management</div>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-name" data-level="90%">Vibe Coding</div>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contattami</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>lavoro.cellura@gmail.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+39 3881543973</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-instagram"></i>
+                        <p>@Kevin_ck8</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="mailto:lavoro.cellura@gmail.com" class="social-icon" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="https://www.instagram.com/Kevin_ck8/" target="_blank" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="tel:+393881543973" class="social-icon" aria-label="Telefono"><i class="fas fa-phone"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo">Kevin<span>Cellura</span></div>
+                    <p>Web Developer</p>
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">Chi Sono</a></li>
+                        <li><a href="#services">Servizi</a></li>
+                        <li><a href="#skills">Competenze</a></li>
+                        <li><a href="#contact">Contatti</a></li>
+                    </ul>
+                </div>
+<!-- Nel footer, aggiorna l'indirizzo email per farlo corrispondere a quello della sezione contatti -->
+<div class="footer-social">
+    <a href="mailto:lavoro.cellura@gmail.com" class="social-icon" aria-label="Email"><i class="fas fa-envelope"></i></a>
+    <a href="https://www.instagram.com/Kevin_ck8/" target="_blank" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="tel:+393881543973" class="social-icon" aria-label="Telefono"><i class="fas fa-phone"></i></a>
+</div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 - Kevin Cellura. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js" defer></script>
+    <script src="js/three-animation.js" defer></script>
+    
+    <!-- Preload delle immagini -->
+    <script>
+        // Precarica le immagini principali
+        const imagesToPreload = [
+            'image/io.png',
+            'image/cameretta.png'
+        ];
+        
+        imagesToPreload.forEach(src => {
+            const img = new Image();
+            img.src = src;
+        });
+    </script>
+</body>
+</html>
