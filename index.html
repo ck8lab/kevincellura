@@ -13,7 +13,7 @@
         <!-- Meta tags per social media -->
         <meta property="og:title" content="Kevin Cellura | CK8Lab">
         <meta property="og:description" content="Sviluppatore web che crea siti web per piccole e grandi aziende con budget limitati.">
-        <meta property="og:image" content="image/io.png">
+        <meta property="og:image" content="image/logo.png">
         <meta property="og:url" content="https://ck8lab.github.io/kevincellura">
         <meta property="og:type" content="website">
         
@@ -24,9 +24,12 @@
         
         <!-- CSS e font -->
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/tetris-animation.css">
+        <link rel="stylesheet" href="css/arcade.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     </head>
@@ -34,6 +37,41 @@
 <body>
     <!-- Canvas per lo sfondo Three.js -->
     <canvas id="bg-canvas"></canvas>
+
+    <!-- Arcade Overlay a schermo intero -->
+    <div id="arcade-overlay" class="arcade-overlay">
+        <div class="arcade-container">
+            <div class="arcade-cabinet">
+                <div class="cabinet-top">
+                    <h2>SNAKE</h2>
+                </div>
+                <div class="cabinet-screen">
+                    <div id="game-instructions" class="game-instructions">
+                        <h3>Istruzioni</h3>
+                        <p>Desktop: Usa le frecce per muoverti</p>
+                        <p>Mobile: Usa i controlli touch sullo schermo</p>
+                        <p>Mangia il cibo rosso per crescere e fare punti</p>
+                        <p>Evita di colpire i bordi o te stesso!</p>
+                        <button id="start-game">INIZIA GIOCO</button>
+                    </div>
+                    <div id="game-container" class="game-container"></div>
+                </div>
+                <div class="mobile-controls">
+                    <div class="horizontal-controls">
+                        <button id="up-btn"><i class="fas fa-arrow-up"></i></button>
+                    </div>
+                    <div class="horizontal-controls">
+                        <button id="left-btn"><i class="fas fa-arrow-left"></i></button>
+                        <button id="down-btn"><i class="fas fa-arrow-down"></i></button>
+                        <button id="right-btn"><i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+                <div class="cabinet-controls">
+                    <button id="close-arcade" class="close-arcade">CHIUDI</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Header/Navbar -->
     <header>
@@ -74,7 +112,25 @@
             <div class="hero-image">
                 <div class="hero-img-container">
                     <div class="profile-image-frame">
-                        <img src="image/io.png" alt="Kevin Cellura" class="profile-image">
+                        <!-- Arcade Cabinet cliccabile -->
+                        <div class="arcade-cabinet-mini" id="arcade-cabinet-mini">
+                            <div class="cabinet-top-mini">
+                                <h3>SNAKE</h3>
+                            </div>
+                            <div class="cabinet-screen-mini" id="game-screen-mini">
+                                <div id="game-container-mini" class="game-container-mini"></div>
+                                <button id="play-button" class="play-button">GIOCA ORA</button>
+                            </div>
+                            <div class="cabinet-controls-mini">
+                                <div class="control-buttons">
+                                    <div class="joystick"></div>
+                                    <div class="action-buttons">
+                                        <div class="action-button"></div>
+                                        <div class="action-button"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -265,12 +321,11 @@
                         <li><a href="#contact">Contatti</a></li>
                     </ul>
                 </div>
-<!-- Nel footer, aggiorna l'indirizzo email per farlo corrispondere a quello della sezione contatti -->
-<div class="footer-social">
-    <a href="mailto:lavoro.cellura@gmail.com" class="social-icon" aria-label="Email"><i class="fas fa-envelope"></i></a>
-    <a href="https://www.instagram.com/Kevin_ck8/" target="_blank" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-    <a href="tel:+393881543973" class="social-icon" aria-label="Telefono"><i class="fas fa-phone"></i></a>
-</div>
+                <div class="footer-social">
+                    <a href="mailto:lavoro.cellura@gmail.com" class="social-icon" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.instagram.com/Kevin_ck8/" target="_blank" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="tel:+393881543973" class="social-icon" aria-label="Telefono"><i class="fas fa-phone"></i></a>
+                </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 - Kevin Cellura. Tutti i diritti riservati.</p>
@@ -279,15 +334,16 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="js/main.js" defer></script>
-    <script src="js/three-animation.js" defer></script>
+    <script src="js/main.js"></script>
+    <script src="js/three-animation.js"></script>
+    <script src="js/snake.js"></script>
     
     <!-- Preload delle immagini -->
     <script>
         // Precarica le immagini principali
         const imagesToPreload = [
-            'image/io.png',
-            'image/cameretta.png'
+            'image/cameretta.png',
+            'image/logo.png'
         ];
         
         imagesToPreload.forEach(src => {

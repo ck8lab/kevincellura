@@ -1,0 +1,454 @@
+/* Arcade Cabinet Styles */
+.arcade-cabinet-mini {
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 20px rgba(255, 0, 81, 0.7);
+    border: 4px solid #222;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.arcade-cabinet-mini:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 30px rgba(255, 0, 81, 0.9);
+}
+
+.cabinet-top-mini {
+    background-color: #ff0051;
+    color: white;
+    padding: 8px;
+    text-align: center;
+    font-family: 'Press Start 2P', 'Poppins', sans-serif;
+}
+
+.cabinet-top-mini h3 {
+    margin: 0;
+    font-size: 16px;
+    text-shadow: 2px 2px 0 #000;
+}
+
+.cabinet-screen-mini {
+    flex: 1;
+    background-color: #000;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.game-container-mini {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.play-button {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 16px;
+    background-color: #ff0051;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.play-button:hover {
+    background-color: #e6004a;
+    transform: translateX(-50%) scale(1.1);
+}
+
+.cabinet-controls-mini {
+    background-color: #222;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+}
+
+.control-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.joystick {
+    width: 30px;
+    height: 30px;
+    background-color: #000;
+    border-radius: 50%;
+    border: 3px solid #444;
+    position: relative;
+}
+
+.joystick:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 15px;
+    height: 15px;
+    background-color: #ff0051;
+    border-radius: 50%;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.action-button {
+    width: 25px;
+    height: 25px;
+    background-color: #ff0051;
+    border-radius: 50%;
+    border: 2px solid #e6004a;
+}
+
+/* Fullscreen overlay for the game */
+.arcade-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    transform: scale(0.9);
+}
+
+.arcade-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+.arcade-container {
+    width: 90%;
+    max-width: 800px;
+    height: 85vh;
+    max-height: 800px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arcade-cabinet {
+    width: 100%;
+    height: 100%;
+    background-color: #222;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 30px rgba(255, 0, 81, 0.7);
+    border: 4px solid #333;
+}
+
+.cabinet-top {
+    background-color: #ff0051;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-family: 'Press Start 2P', 'Poppins', sans-serif;
+}
+
+.cabinet-top h2 {
+    margin: 0;
+    font-size: 24px;
+    text-shadow: 2px 2px 0 #000;
+}
+
+.cabinet-screen {
+    flex: 1;
+    background-color: #000;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.game-instructions {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    text-align: center;
+    padding: 20px;
+}
+
+.game-instructions h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #ff0051;
+}
+
+.game-instructions p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+#start-game {
+    margin-top: 30px;
+    padding: 15px 30px;
+    background-color: #ff0051;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#start-game:hover {
+    background-color: #e6004a;
+    transform: scale(1.05);
+}
+
+.game-container {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative;
+}
+
+/* Score display */
+.score-display {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: 'Press Start 2P', 'Poppins', sans-serif;
+    font-size: 16px;
+    z-index: 5;
+}
+
+/* Game over screen */
+.game-over-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.game-over-screen h3 {
+    color: #ff0051;
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 0 #000;
+}
+
+.game-over-screen p {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.restart-button {
+    padding: 15px 30px;
+    background-color: #ff0051;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.restart-button:hover {
+    background-color: #e6004a;
+    transform: scale(1.05);
+}
+
+.mobile-controls {
+    display: none;
+    width: 100%;
+    padding: 10px;
+    background-color: #111;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.horizontal-controls {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.mobile-controls button {
+    width: 60px;
+    height: 60px;
+    margin: 0 10px;
+    background-color: #333;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.mobile-controls button:active {
+    background-color: #ff0051;
+}
+
+.cabinet-controls {
+    background-color: #333;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.close-arcade {
+    padding: 10px 20px;
+    background-color: #ff0051;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.close-arcade:hover {
+    background-color: #e6004a;
+}
+
+/* Modifiche per rendere il cabinato più grande nella hero section */
+.profile-image-frame {
+    width: 300px;
+    height: 400px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .mobile-controls {
+        display: flex;
+    }
+    
+    .arcade-container {
+        width: 95%;
+        height: 85vh;
+        margin-top: 15px;
+    }
+    
+    .cabinet-top h2 {
+        font-size: 20px;
+    }
+    
+    .game-instructions h3 {
+        font-size: 20px;
+    }
+    
+    .game-instructions p {
+        font-size: 14px;
+    }
+    
+    #start-game {
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+    
+    .game-over-screen h3 {
+        font-size: 28px;
+    }
+    
+    .game-over-screen p {
+        font-size: 18px;
+    }
+    
+    .restart-button {
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+    
+    .score-display {
+        font-size: 14px;
+        padding: 8px;
+    }
+    
+    .profile-image-frame {
+        width: 250px;
+        height: 350px;
+    }
+}
+
+.arcade-cabinet-mini {
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.arcade-cabinet-mini:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 15px rgba(255, 0, 128, 0.7);
+}
+
+/* Aggiungi questi stili alla fine del file arcade.css */
+
+.arcade-cabinet-mini {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    position: relative;
+    z-index: 10;
+}
+
+.arcade-cabinet-mini:hover {
+    transform: scale(1.02);
+}
+
+.cabinet-screen-mini {
+    pointer-events: none; /* Permette ai click di passare attraverso al contenitore padre */
+}
+
+.play-button {
+    pointer-events: auto; /* Ripristina i click sul pulsante */
+    position: relative;
+    z-index: 20;
+}

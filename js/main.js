@@ -178,3 +178,11 @@ renderer = new THREE.WebGLRenderer({
     alpha: true,
     antialias: true
 });
+
+// Aggiungi alla fine del file main.js
+document.addEventListener('DOMContentLoaded', function() {
+    // Carica lo script di Pacman
+    const pacmanScript = document.createElement('script');
+    pacmanScript.src = 'js/pacman.js';
+    document.body.appendChild(pacmanScript);
+});
